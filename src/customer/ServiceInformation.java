@@ -2,9 +2,17 @@ package customer;
 
 public class ServiceInformation {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+// properties
+	
+private int periodSpent;
+private Cuisine cuisine;
+
+// constructor
+
+public ServiceInformation(int periodSpent, Cuisine cuisine) {
+	this.periodSpent = periodSpent;
+	this.cuisine = cuisine;
 
 	}
 
-}
+};

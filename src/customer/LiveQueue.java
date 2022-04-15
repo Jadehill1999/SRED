@@ -2,9 +2,12 @@ package customer;
 
 public class LiveQueue {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	// properties
+private int currentWaitTime;
 
-	}
-
+// constructor
+public LiveQueue(int currentWaitTime) {
+	this.currentWaitTime = currentWaitTime;
 }
+	
+};
