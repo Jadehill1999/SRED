@@ -25,7 +25,6 @@ this.checkedIn = checkedIn;
 this.serviceInformation = serviceInformation;
 }
 
-
 //Add eateryName
 public void addEateryName(String customerEateryName) {
 this.eateryName = customerEateryName;
