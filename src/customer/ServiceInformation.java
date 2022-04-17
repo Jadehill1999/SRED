@@ -15,4 +15,12 @@ public ServiceInformation(int periodSpent, Cuisine cuisine) {
 
 	}
 
+public void setCuisine(Cuisine cuisine) {
+this.cuisine = cuisine;
+}public Cuisine getCuisine() {
+return cuisine;
+}
+
+
+
 };

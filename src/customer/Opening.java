@@ -16,4 +16,16 @@ public Opening (String day, int open, int close) {
 
 	}
 
+public void addDayOpen(String customerDayOpen) {
+	this.day = customerDayOpen;
+}
+
+public void addOpeningTime(int customerOpeningTime) {
+	this.open = customerOpeningTime;
+}
+
+public void addCloseTime(int customerCloseTime) {
+	this.close = customerCloseTime;
+}
+
 };

@@ -26,4 +26,45 @@ this.serviceInformation = serviceInformation;
 }
 
 
+//Add eateryName
+public void addEateryName(String customerEateryName) {
+this.eateryName = customerEateryName;
+}
+
+// Add capacity
+public void addCapacity(int customerCapacity) {
+	this.capacity = customerCapacity;
+}
+
+// Add opening
+public void addOpening(Opening customerOpening) {
+	this.opening = customerOpening;
+}
+
+// Add location
+public void addLocation(Location customerLocation) {
+	this.location = customerLocation;
+	
+}
+
+//Update Live Queue
+public void updateLiveQueue(LiveQueue customerLiveQueue) {
+	this.liveQueue = customerLiveQueue;
+}
+
+// Add Checked In
+public void addCheckedIn(int customerCheckedIn) {
+	this.checkedIn = customerCheckedIn;
+}
+
+public void deductCheckedIn(int customerCheckedOut) {
+	this.checkedIn = customerCheckedOut;
+}
+
+// Add Service Information
+public void addServiceInformation(ServiceInformation customerServiceInformation) {
+	this.serviceInformation = customerServiceInformation;
+}
+
+
 };
