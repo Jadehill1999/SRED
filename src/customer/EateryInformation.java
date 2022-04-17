@@ -30,26 +30,40 @@ this.serviceInformation = serviceInformation;
 public void addEateryName(String customerEateryName) {
 this.eateryName = customerEateryName;
 }
+public String getEateryName() {
+	return eateryName;
+}
 
 // Add capacity
 public void addCapacity(int customerCapacity) {
 	this.capacity = customerCapacity;
+}
+public int getCapacity () {
+	return capacity;
 }
 
 // Add opening
 public void addOpening(Opening customerOpening) {
 	this.opening = customerOpening;
 }
+public Opening getOpening() {
+	return opening;
+}
 
 // Add location
 public void addLocation(Location customerLocation) {
-	this.location = customerLocation;
-	
+	this.location = customerLocation;	
+}
+public Location getLocation() {
+	return location;
 }
 
 //Update Live Queue
 public void updateLiveQueue(LiveQueue customerLiveQueue) {
 	this.liveQueue = customerLiveQueue;
+}
+public LiveQueue getLiveQueue() {
+	return liveQueue;
 }
 
 // Add Checked In
@@ -61,10 +75,17 @@ public void deductCheckedIn(int customerCheckedOut) {
 	this.checkedIn = customerCheckedOut;
 }
 
+public int getCheckedIn() {
+	return checkedIn;
+}
+
 // Add Service Information
 public void addServiceInformation(ServiceInformation customerServiceInformation) {
 	this.serviceInformation = customerServiceInformation;
 }
-
+public ServiceInformation getServiceInformation() {
+	return serviceInformation;
+	
+}
 
 };

@@ -14,5 +14,8 @@ public LiveQueue(int currentWaitTime) {
 public void updateLiveQueue(int customerCurrentWaitTime) {
 	this.currentWaitTime = customerCurrentWaitTime;
 }
+public int getCurrentWaitTime() {
+	return currentWaitTime;
+}
 	
 };
