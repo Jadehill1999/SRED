@@ -9,5 +9,10 @@ private int currentWaitTime;
 public LiveQueue(int currentWaitTime) {
 	this.currentWaitTime = currentWaitTime;
 }
+
+//Update Live Queue
+public void updateLiveQueue(int customerCurrentWaitTime) {
+	this.currentWaitTime = customerCurrentWaitTime;
+}
 	
 };

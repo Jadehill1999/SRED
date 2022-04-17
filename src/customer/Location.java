@@ -17,4 +17,20 @@ this.postcode = postcode;
 
 	}
 
+public void updateAddressLineOne(String customerUpdateAddressLineOne) {
+	this.addressLineOne = customerUpdateAddressLineOne;
+}
+
+public void updateAddressLineTwo(String customerUpdateAddressLineTwo) {
+	this.addressLineTwo = customerUpdateAddressLineTwo;
+}
+
+public void updateAddressLineThree(String customerUpdateAddressLineThree) {
+	this.addressLineThree = customerUpdateAddressLineThree;
+}
+
+public void updatePostcode(String customerUpdatePostcode) {
+	this.postcode = customerUpdatePostcode;
+}
+
 };
