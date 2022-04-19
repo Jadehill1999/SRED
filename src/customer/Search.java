@@ -10,7 +10,7 @@ public class Search {
 	
 	// Create a new list variable for the search 
 
-	List<EateryInformation> searchResults;
+	EateryInformation[] searchResults;
 
 	
 	// Opening requirements
@@ -57,6 +57,7 @@ public class Search {
 	
 	// Boolean to match time (isOpen)
 	public Boolean isOpen(LocalDateTime userRequestDateTime, String userPeriodSpentPreference, int currentWaitTime, LocalTime serviceOpen, LocalTime serviceClose) {
+		
 		LocalTime requestTime = userRequestDateTime.toLocalTime();
 		int userStay = userPeriodSpentPreferenceMinutes(userPeriodSpentPreference);
 		LocalTime maxFinishTime = requestTime.plusMinutes(userStay + currentWaitTime);
@@ -69,23 +70,37 @@ public class Search {
 	
 	// Service period requirements
 	// Period Spent time sorted into categories to match end user preferences;
-	// Quick bite <= 45, Average 45-89, Leisurely >= 90
+	// Quick bite <= 45, No preference all, Leisurely >= 90
 	
-	
-	
-//	public Boolean matchUserSpeedPreference(String userPeriodSpentPreference, int currentWaitTime, int customerPeriodSpent) {
-//		if (!userPeriodSpentPreference.isEmpty()) {
-//			int userStay = userPeriodSpentPreferenceMinutes(userPeriodSpentPreference);
-//			}
-//		
-//		return true;
-//	
-//	}
+
+	public Boolean matchUserSpeedPreference(String userPeriodSpentPreference, int currentWaitTime, int customerPeriodSpent) {
+		if (!userPeriodSpentPreference.isEmpty())
+			return true;
+		else if(userPeriodSpentPreference == "Quick bite" && (customerPeriodSpent + currentWaitTime) <= 45)
+			return true;
+		else if(userPeriodSpentPreference == "Leisurely" && (customerPeriodSpent + currentWaitTime) >= 90)
+			return true;
+		else 
+			return false;
+	}
 	
 	
 	// Cuisine == customer preference(s) perhaps give end user option to choose more than one and pass in a list
 	// iterate through end user list and match against customer cuisine
 	// nullable?
+	
+	public Boolean matchCuisinePreference(Cuisine serviceCuisine, Cuisine[] userCuisinePreference) {
+		Boolean matching = false;
+	
+		for(Cuisine cuisine : userCuisinePreference) {
+			if (cuisine == serviceCuisine) 
+			{
+			matching = true;
+			}
+		}
+		
+		return matching;
+	}
 	
 	// Location requirements
 	// Have a postcode letter list - assign a value and bubble sort?
