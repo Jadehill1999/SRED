@@ -16,10 +16,11 @@ private List<Cuisine> userCuisinePreferences;
 private String userPostCode;
 
 // constructor
-public UserPreferences(LocalDateTime userRequestDateTime, String userPeriodSpentPreference, List<Cuisine> userCuisinePreferences) {
+public UserPreferences(LocalDateTime userRequestDateTime, String userPeriodSpentPreference, List<Cuisine> userCuisinePreferences, String userPostCode) {
 	this.userRequestDateTime = userRequestDateTime;
 	this.userPeriodSpentPreference = userPeriodSpentPreference;
 	this.userCuisinePreferences = new ArrayList<Cuisine>();
+	this.userPostCode = userPostCode;
 }
 
 // Add Cuisines to the list

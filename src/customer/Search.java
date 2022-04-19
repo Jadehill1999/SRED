@@ -5,6 +5,7 @@ import java.time.format.TextStyle;
 import java.util.List;
 import java.util.Locale;
 import User.UserPreferences;
+import customer.EateryInformation;
 
 
 public class Search {
@@ -41,7 +42,7 @@ public class Search {
 	// Get minutes of the user preference
 	public int userPeriodSpentPreferenceMinutes(String userPeriodSpentPreference) {
 		int periodSpentPreference = 0;
-		
+
 		if(userPeriodSpentPreference.isEmpty())
 			periodSpentPreference = 60;
 		else {
@@ -90,7 +91,7 @@ public class Search {
 	// iterate through end user list and match against customer cuisine
 	// nullable?
 	
-	public Boolean matchCuisinePreference(Cuisine serviceCuisine, Cuisine[] userCuisinePreference) {
+	public Boolean matchCuisinePreference(Cuisine serviceCuisine, List<Cuisine> userCuisinePreference) {
 		Boolean matching = false;
 	
 		for(Cuisine cuisine : userCuisinePreference) {
@@ -106,9 +107,16 @@ public class Search {
 	// construct the list of matching eateries
 	
 	public void eateryMatch(EateryInformation customerEateryInfo, UserPreferences userPreferences) {
-		Boolean matchingEatery = true;
+
+		LocalDateTime userRequestDateTime = userPreferences.getUserRequestDateTime();
 		
-		if()
+		if(matchOpeningDay(userRequestDateTime, customerEateryInfo.getOpening().getDay()) == true
+				&& isOpen(userRequestDateTime, userPreferences.getUserPeriodSpentPreference(), customerEateryInfo.getLiveQueue().getCurrentWaitTime(), customerEateryInfo.getOpening().getOpeningTime(), customerEateryInfo.getOpening().getCloseTime()) == true
+				&& matchUserSpeedPreference(userPreferences.getUserPeriodSpentPreference(), customerEateryInfo.getLiveQueue().getCurrentWaitTime(), customerEateryInfo.getServiceInformation().getPeriodSpent()) == true
+				&& matchCuisinePreference(customerEateryInfo.getServiceInformation().getCuisine(), userPreferences.getUserCuisinePreferences()) == true)
+		{
+			searchResults.add(customerEateryInfo);
+		}
 	}
 	
 	// Location requirements
