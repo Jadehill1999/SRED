@@ -4,13 +4,14 @@ import java.time.*;
 import java.time.format.TextStyle;
 import java.util.List;
 import java.util.Locale;
+import User.UserPreferences;
 
 
 public class Search {
 	
 	// Create a new list variable for the search 
 
-	EateryInformation[] searchResults;
+	List<EateryInformation> searchResults;
 
 	
 	// Opening requirements
@@ -100,6 +101,14 @@ public class Search {
 		}
 		
 		return matching;
+	}
+	
+	// construct the list of matching eateries
+	
+	public void eateryMatch(EateryInformation customerEateryInfo, UserPreferences userPreferences) {
+		Boolean matchingEatery = true;
+		
+		if()
 	}
 	
 	// Location requirements

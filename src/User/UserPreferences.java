@@ -13,6 +13,7 @@ public class UserPreferences {
 private LocalDateTime userRequestDateTime;
 private String userPeriodSpentPreference;
 private List<Cuisine> userCuisinePreferences;
+private String userPostCode;
 
 // constructor
 public UserPreferences(LocalDateTime userRequestDateTime, String userPeriodSpentPreference, List<Cuisine> userCuisinePreferences) {
@@ -24,6 +25,22 @@ public UserPreferences(LocalDateTime userRequestDateTime, String userPeriodSpent
 // Add Cuisines to the list
 public void addCuisineToPreferences(Cuisine cuisine) {
 	userCuisinePreferences.add(cuisine);
+}
+
+public LocalDateTime getUserRequestDateTime() {
+	return userRequestDateTime;
+}
+
+public String getUserPeriodSpentPreference() {
+	return userPeriodSpentPreference;
+}
+
+public List<Cuisine> getUserCuisinePreferences(){
+	return userCuisinePreferences;
+}
+
+public String getUserPostCode() {
+	return userPostCode;
 }
 
 }
