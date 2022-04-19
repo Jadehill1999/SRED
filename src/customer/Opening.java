@@ -35,7 +35,7 @@ public LocalTime getOpeningTime() {
 public void addCloseTime(LocalTime customerCloseTime) {
 	this.close = customerCloseTime;
 }
-public LocalTime addCloseTime() {
+public LocalTime getCloseTime() {
 	return close;
 }
 

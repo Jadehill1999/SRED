@@ -11,6 +11,7 @@ private Opening opening;
 private Location location;
 private LiveQueue liveQueue;
 private int checkedIn;
+// potentially change this to List<ServiceInformation>
 private ServiceInformation serviceInformation;
 
 
