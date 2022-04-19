@@ -2,7 +2,6 @@ package customer;
 
 import java.time.*;
 import java.time.format.TextStyle;
-import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
@@ -12,7 +11,6 @@ public class Search {
 	// Create a new list variable for the search 
 
 	List<EateryInformation> searchResults;
-	
 
 	
 	// Opening requirements
@@ -37,12 +35,8 @@ public class Search {
 			return false;
 	}
 	
-	
-	// Time parser to convert end user LocalDateTime into time for comparison with Opening class
-//	public LocalTime requestTime(LocalDateTime userRequestDateTime) {
-//		return userRequestDateTime.toLocalTime();
-//	}
-	
+	// Period Spent time sorted into categories to match end user preferences;
+	// Quick bite <= 45, No Preference 45-89, Leisurely >= 90
 	// Get minutes of the user preference
 	public int userPeriodSpentPreferenceMinutes(String userPeriodSpentPreference) {
 		int periodSpentPreference = 0;
@@ -62,11 +56,12 @@ public class Search {
 	}
 	
 	// Boolean to match time (isOpen)
-	public Boolean isOpen(LocalDateTime userRequestDateTime, int userPeriodSpentPreference, int currentWaitTime, LocalTime serviceOpen, LocalTime serviceClose) {
+	public Boolean isOpen(LocalDateTime userRequestDateTime, String userPeriodSpentPreference, int currentWaitTime, LocalTime serviceOpen, LocalTime serviceClose) {
 		LocalTime requestTime = userRequestDateTime.toLocalTime();
-		LocalTime averageFinishTime = requestTime.plusMinutes(userPeriodSpentPreference + currentWaitTime);
+		int userStay = userPeriodSpentPreferenceMinutes(userPeriodSpentPreference);
+		LocalTime maxFinishTime = requestTime.plusMinutes(userStay + currentWaitTime);
 		
-		if ((requestTime.isAfter(serviceOpen) || requestTime.compareTo(serviceOpen) == 0) && (averageFinishTime.isBefore(serviceClose) || averageFinishTime.compareTo(serviceClose) == 0))
+		if ((requestTime.isAfter(serviceOpen) || requestTime.compareTo(serviceOpen) == 0) && (maxFinishTime.isBefore(serviceClose) || maxFinishTime.compareTo(serviceClose) == 0))
 			return true;
 		else 
 			return false;
@@ -74,8 +69,20 @@ public class Search {
 	
 	// Service period requirements
 	// Period Spent time sorted into categories to match end user preferences;
-	// Quick bite <= 45, Average >45 <89, Leisurely >= 90
-	// nullable?
+	// Quick bite <= 45, Average 45-89, Leisurely >= 90
+	
+	
+	
+//	public Boolean matchUserSpeedPreference(String userPeriodSpentPreference, int currentWaitTime, int customerPeriodSpent) {
+//		if (!userPeriodSpentPreference.isEmpty()) {
+//			int userStay = userPeriodSpentPreferenceMinutes(userPeriodSpentPreference);
+//			}
+//		
+//		return true;
+//	
+//	}
+	
+	
 	// Cuisine == customer preference(s) perhaps give end user option to choose more than one and pass in a list
 	// iterate through end user list and match against customer cuisine
 	// nullable?
