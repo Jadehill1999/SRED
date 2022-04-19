@@ -106,9 +106,9 @@ public class Search {
 	// construct the list of matching eateries
 	
 	public void eateryMatch(EateryInformation customerEateryInfo, UserPreferences userPreferences) {
-		Boolean matchingEatery = true;
-		
-		if()
+		if(matchOpeningDay(userPreferences.getUserRequestDateTime(), customerEateryInfo.getOpening().getDay()) == true) {
+			searchResults.add(customerEateryInfo);
+			}
 	}
 	
 	// Location requirements
