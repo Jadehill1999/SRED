@@ -14,13 +14,15 @@ private LocalDateTime userRequestDateTime;
 private String userPeriodSpentPreference;
 private List<Cuisine> userCuisinePreferences;
 private String userPostCode;
+private int numberDiners;
 
 // constructor
-public UserPreferences(LocalDateTime userRequestDateTime, String userPeriodSpentPreference, List<Cuisine> userCuisinePreferences, String userPostCode) {
+public UserPreferences(LocalDateTime userRequestDateTime, String userPeriodSpentPreference, List<Cuisine> userCuisinePreferences, String userPostCode, int numberDiners) {
 	this.userRequestDateTime = LocalDateTime.now();
 	this.userPeriodSpentPreference = userPeriodSpentPreference;
 	this.userCuisinePreferences = new ArrayList<Cuisine>();
 	this.userPostCode = userPostCode;
+	this.numberDiners = numberDiners;
 }
 
 // Add Cuisines to the list
@@ -42,6 +44,10 @@ public List<Cuisine> getUserCuisinePreferences(){
 
 public String getUserPostCode() {
 	return userPostCode;
+}
+
+public int getNumberDiners() {
+	return numberDiners;
 }
 
 }

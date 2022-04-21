@@ -20,7 +20,6 @@ public void setCuisine(Cuisine cuisine) {
 	this.cuisine = cuisine;
 }
 
-
 public Cuisine getCuisine() {
 	return cuisine;
 }
@@ -29,9 +28,9 @@ public Cuisine getCuisine() {
 public void addPeriodSpent(int customerPeriodSpent) {
 	this.periodSpent = customerPeriodSpent; 
 }
+
 public int getPeriodSpent() {
 	return periodSpent;
 }
-
 
 };

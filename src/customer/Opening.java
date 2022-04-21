@@ -2,6 +2,8 @@ package customer;
 
 import java.time.*;
 
+import User.UserPreferences;
+
 public class Opening {
 
 // properties
