@@ -13,7 +13,7 @@ public class OpeningMatch implements UserPeriodPrefInMinutes, PreferenceMatch {
 	// Opening requirements
 	// Day parser to convert end user LocalDateTime into day int (Opening class)
 		
-	private String requestDay(LocalDateTime userRequestDateTime) {
+	public String requestDay(LocalDateTime userRequestDateTime) {
 		
 		String dayOfWeek = null;
 		
@@ -62,9 +62,12 @@ public class OpeningMatch implements UserPeriodPrefInMinutes, PreferenceMatch {
 		
 		int userStay = userPeriodPrefInMinutes(userPreferences.getUserPeriodSpentPreference());
 		LocalTime maxFinishTime = requestTime.plusMinutes(userStay + eateryInfo.getLiveQueue().getCurrentWaitTime());
+		String temp = eateryInfo.getOpening().getDay();
+		LocalDateTime userRequestDateTime = userPreferences.getUserRequestDateTime();
+		Boolean openThatDay = matchOpeningDay(userPreferences.getUserRequestDateTime(), temp);
 		
-		if ((requestTime.isAfter(openTime) || requestTime.compareTo(openTime) == 0) && (maxFinishTime.isBefore(closeTime) || maxFinishTime.compareTo(closeTime) == 0))
-			return true;
-		return false;
+		if ((requestTime.isAfter(openTime) || requestTime.compareTo(openTime) == 0) && (maxFinishTime.isBefore(closeTime) || maxFinishTime.compareTo(closeTime) == 0) && openThatDay == true)
+			{return true;}
+		else {return false;}
 	}
 }

@@ -18,7 +18,7 @@ private int numberDiners;
 
 // constructor
 public UserPreferences(LocalDateTime userRequestDateTime, String userPeriodSpentPreference, List<Cuisine> userCuisinePreferences, String userPostCode, int numberDiners) {
-	this.userRequestDateTime = LocalDateTime.now();
+	this.userRequestDateTime = userRequestDateTime;
 	this.userPeriodSpentPreference = userPeriodSpentPreference;
 	this.userCuisinePreferences = new ArrayList<Cuisine>();
 	this.userPostCode = userPostCode;

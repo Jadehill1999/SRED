@@ -1,6 +1,8 @@
 package customer;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 
 
@@ -24,11 +26,15 @@ public class AddedEateries {
 	private ServiceInformation serviceInformation2;
 	private ServiceInformation serviceInformation3;
 	private ServiceInformation serviceInformation4;
+	private ServiceInformation serviceInformation5;
 	
 	private EateryInformation eateryInformation1;
 	private EateryInformation eateryInformation2;
 	private EateryInformation eateryInformation3;
 	private EateryInformation eateryInformation4;
+	private EateryInformation eateryInformation5;
+	
+	private ArrayList<EateryInformation> eateries;
 	
 	public void addInformation(){
 	opening1 = new Opening("Tuesday", LocalTime.of(8, 00, 00), LocalTime.of(23, 00, 00) ); 
@@ -46,23 +52,37 @@ public class AddedEateries {
 	liveQueue4 = new LiveQueue(3);
 	
 	serviceInformation1 = new ServiceInformation(25, Cuisine.FASTFOOD);
-	serviceInformation2 = new ServiceInformation(35, Cuisine.FASTFOOD);
+	serviceInformation2 = new ServiceInformation(30, Cuisine.FASTFOOD);
 	serviceInformation3 = new ServiceInformation(90, Cuisine.FRENCH);
 	serviceInformation4 = new ServiceInformation(50, Cuisine.CHINESE);
-		
+	serviceInformation5 = new ServiceInformation(40, Cuisine.FASTFOOD);
 			
-	
 	eateryInformation1 = new EateryInformation(
 		"MacDonalds", 40, opening1, location1, liveQueue1, 12, serviceInformation1);
 	
 	eateryInformation2 = new EateryInformation(
-			"BurgerQueen", 35, opening2, location2, liveQueue2, 34, serviceInformation2);
+			"BurgerQueen", 35, opening3, location2, liveQueue2, 33, serviceInformation2);
 	
 	eateryInformation3 = new EateryInformation(
 			"Le Petite Restaurant", 20, opening1, location3, liveQueue3, 10, serviceInformation3);
 	
 	eateryInformation4 = new EateryInformation(
-			"Moon Garden", 5, opening3, location4, liveQueue4, 3, serviceInformation4);
-			
+			"Moon Garden", 5, opening2, location4, liveQueue4, 3, serviceInformation4);
+	
+	eateryInformation5 = new EateryInformation(
+			"Chicken Bothy", 8, opening3, location4, liveQueue4, 3, serviceInformation5);
+	
+	eateries = new ArrayList<EateryInformation>();
+	
+	eateries.add(eateryInformation1);
+	eateries.add(eateryInformation2);
+	eateries.add(eateryInformation3);
+	eateries.add(eateryInformation4);
+	eateries.add(eateryInformation5);
+		
 	}
+	
+	public ArrayList<EateryInformation> getEateries(){
+		return eateries;
+	};
 }

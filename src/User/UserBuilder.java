@@ -12,13 +12,15 @@ public class UserBuilder {
 	private String userPeriodSpentPreference;
 	private List<Cuisine> userCuisinePreferences;
 	private String userPostCode;
+	private int numberDiners;
 
 	
-	public UserBuilder (LocalDateTime userRequestDateTime, String userPeriodSpentPreference, List<Cuisine> userCuisinePreferences, String userPostCode) {
+	public UserBuilder (LocalDateTime userRequestDateTime, String userPeriodSpentPreference, List<Cuisine> userCuisinePreferences, String userPostCode, int numberDiners) {
 		this.userRequestDateTime = LocalDateTime.now();
 		this.userPeriodSpentPreference = userPeriodSpentPreference;
 		this.userCuisinePreferences = new ArrayList<Cuisine>();
 		this.userPostCode = userPostCode;
+		this.numberDiners = numberDiners;
 	}
 	
 	public UserBuilder setUserRequestDateTime(LocalDateTime userRequestDateTime) {
@@ -40,7 +42,13 @@ public class UserBuilder {
 		this.userPostCode = userPostCode;
 		return this;
 	}
+	
+	public UserBuilder setNumberDiners(int numberDiners) {
+		this.numberDiners = numberDiners;
+		return this;
+	}
+	
 	public UserPreferences build () {
-		return new UserPreferences(userRequestDateTime, userPeriodSpentPreference, userCuisinePreferences, userPostCode);
+		return new UserPreferences(userRequestDateTime, userPeriodSpentPreference, userCuisinePreferences, userPostCode, numberDiners);
 	}
 }

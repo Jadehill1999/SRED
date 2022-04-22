@@ -7,24 +7,28 @@ import customer.PreferenceMatch;
 
 public class RecommendedEateries {
 	
-	private ArrayList<PreferenceMatch> criteria;
+	private ArrayList<PreferenceMatch> criteria = new ArrayList<PreferenceMatch>();
+	private ArrayList<EateryInformation> recommendedEateries = new ArrayList<EateryInformation>();
 	
-	public ArrayList<EateryInformation> eateryInformation(EateryInformation eateryInformation, UserPreferences userPreferences){
+	public ArrayList<EateryInformation> recommendedEateries(ArrayList<EateryInformation> dbEateryInformation, UserPreferences userPreferences){
 		
-		ArrayList<EateryInformation> recommendedEateries = new ArrayList<EateryInformation>();
-
-		for(PreferenceMatch criterium: criteria){
-			if (criterium.preferenceMatch(eateryInformation, userPreferences));
-			recommendedEateries.add(eateryInformation);
+		for (EateryInformation dbEatery: dbEateryInformation) {
+			eligibleEateries(dbEatery, userPreferences);	
 		}
 		return recommendedEateries;
 	}
 	
-	// for each eateryInformation object in the test case seed, 
-	// iterate through PreferenceMatch classes,
-	// evaluate to true? = new list
-	// return list
-	// AssertEquals.recommendedEateries.length(3);
-	// AssertEquals. recommendedEateries[0].name("McDonalds");
+	
+	public void eligibleEateries(EateryInformation eateryInformation, UserPreferences userPreferences){
+			
+		boolean passesPreferences = true;
 
+		for(PreferenceMatch criterium: criteria){	
+			if (!criterium.preferenceMatch(eateryInformation, userPreferences)) {
+				passesPreferences = false;}
+		}
+		
+		if (passesPreferences)
+			recommendedEateries.add(eateryInformation);
+	}
 }
