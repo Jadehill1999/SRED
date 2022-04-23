@@ -36,7 +36,7 @@ public class OpeningMatch implements UserPeriodPrefInMinutes, PreferenceMatch {
 		// Period Spent time sorted into categories to match end user preferences;
 		// Quick bite <= 45, No Preference 45-89, Leisurely >= 90
 		// Get minutes of the user preference
-	private int userPeriodPrefInMinutes(String userPeriodSpentPreference) {
+	public int userPeriodPrefInMinutes(String userPeriodSpentPreference) {
 		int periodSpentPreference = 0;
 
 		if(userPeriodSpentPreference.isEmpty())

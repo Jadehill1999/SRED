@@ -47,5 +47,12 @@ class OpeningMatchTest {
 		
 		assertEquals("Tuesday", result);
 	}
+	
+	@Test
+	void userPeriodPrefInMinutesNullTest() {
+		String userPeriodPreferenceSpent = "";
+		int result = o.userPeriodPrefInMinutes(userPeriodPreferenceSpent);
+		assertEquals(60, result);
+	}
 
 }
