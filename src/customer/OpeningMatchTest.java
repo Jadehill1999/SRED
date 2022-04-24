@@ -31,7 +31,7 @@ class OpeningMatchTest {
 	@Test
 	void testPreferenceMatch() {
 	// Arrange
-		UserPreferences userPref1 = new UserPreferences(LocalDateTime.of(2022,04,19, 21, 00, 00, 00000), "Quick bite", new ArrayList<Cuisine>(Arrays.asList(Cuisine.FASTFOOD, Cuisine.BURGER)), "ML3 0AA", 2);	
+		UserPreferences userPref1 = new UserPreferences(LocalDateTime.of(2022, 04 ,19 , 21, 00, 00, 00000), "Quick bite", new ArrayList<Cuisine>(Arrays.asList(Cuisine.FASTFOOD, Cuisine.BURGER)), "ML3 0AA", 2);	
 	// Action
 		Boolean openPreferenceMatch = o.preferenceMatch(eatery1, userPref1);
 	//Assert
