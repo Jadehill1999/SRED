@@ -18,7 +18,6 @@ import user.UserPreferences;
 class OpeningMatchTests {
 	
 	private OpeningMatch o = new OpeningMatch();
-	private EateryInformation eatery1;
 	private ArrayList<EateryInformation> dbEateries;
 	private AddedEateries addedEateries = new AddedEateries();
 
@@ -27,19 +26,7 @@ class OpeningMatchTests {
 	
 	addedEateries.addInformation();
 	dbEateries = addedEateries.getEateries();
-	eatery1 = dbEateries.get(0);
 	
-	}
-
-	@Test
-	void testPreferenceMatch() {
-	// Arrange
-		UserPreferences userPref1 = new UserPreferences(LocalDateTime.of(2022, 04 ,19 , 21, 00, 00, 00000), "Quick bite", new ArrayList<Cuisine>(Arrays.asList(Cuisine.FASTFOOD, Cuisine.BURGER)), "ML3 0AA", 2);	
-	// Action
-		Boolean openPreferenceMatch = o.preferenceMatch(eatery1, userPref1);
-	//Assert
-		assertEquals(true, openPreferenceMatch)		
-			;
 	}
 	
 	@Test
@@ -65,4 +52,13 @@ class OpeningMatchTests {
 		assertEquals(60, result);
 	}
 
+	@Test
+	void userPeriodPrefInMinutesTest() {
+		String userPeriodPreferenceSpent1 = "Quick bite";
+		String userPeriodPreferenceSpent2 = "Leisurely";
+		int result1 = o.userPeriodPrefInMinutes(userPeriodPreferenceSpent1);
+		int result2 = o.userPeriodPrefInMinutes(userPeriodPreferenceSpent2);
+		assertEquals(45, result1);
+		assertEquals(90, result2);
+	}
 }
