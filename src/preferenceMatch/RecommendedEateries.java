@@ -1,9 +1,9 @@
-package customer;
+package preferenceMatch;
 
 import java.util.ArrayList;
 
 import User.UserPreferences;
-import customer.PreferenceMatch;
+import customer.EateryInformation;
 
 public class RecommendedEateries {
 	

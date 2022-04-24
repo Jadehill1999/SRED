@@ -1,4 +1,4 @@
-package customer;
+package tests;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import User.UserPreferences;
+import customer.Cuisine;
+import customer.EateryInformation;
+import preferenceMatch.RecommendedEateries;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

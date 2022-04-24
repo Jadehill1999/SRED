@@ -1,4 +1,4 @@
-package customer;
+package preferenceMatch;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
@@ -6,6 +6,8 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.TextStyle;
 import java.util.Locale;
+
+import User.UserPeriodPrefInMinutes;
 import User.UserPreferences;
 
 public class OpeningMatch implements UserPeriodPrefInMinutes, PreferenceMatch {

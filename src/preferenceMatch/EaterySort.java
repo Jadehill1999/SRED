@@ -1,4 +1,4 @@
-package customer;
+package preferenceMatch;
 
 import java.util.ArrayList;
 import java.util.List;

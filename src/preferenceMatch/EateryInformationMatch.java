@@ -1,4 +1,4 @@
-package customer;
+package preferenceMatch;
 
 import java.time.*;
 import java.time.format.TextStyle;

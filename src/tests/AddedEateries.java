@@ -1,8 +1,15 @@
-package customer;
+package tests;
 
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
+
+import customer.Cuisine;
+import customer.EateryInformation;
+import customer.LiveQueue;
+import customer.Location;
+import customer.Opening;
+import customer.ServiceInformation;
 
 
 

@@ -1,4 +1,4 @@
-package customer;
+package tests;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -10,6 +10,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import User.UserPreferences;
+import customer.Cuisine;
+import customer.EateryInformation;
+import preferenceMatch.EateryInformationMatch;
 
 class EateryInformationMatchTest {
 	

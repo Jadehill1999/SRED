@@ -1,8 +1,10 @@
-package customer;
+package preferenceMatch;
 
 import java.util.List;
 
 import User.UserPreferences;
+import customer.Cuisine;
+import customer.EateryInformation;
 
 public class ServiceInformationMatch implements PreferenceMatch{
 	
