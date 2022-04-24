@@ -2,17 +2,13 @@ package tests;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import eatery.Cuisine;
 import eatery.EateryInformation;
 import preferenceMatch.EateryInformationMatch;
-import user.UserPreferences;
 
 class EateryInformationMatchTests {
 	
@@ -27,7 +23,6 @@ class EateryInformationMatchTests {
 	addedEateries.addInformation();
 	dbEateries = addedEateries.getEateries();
 	eatery1 = dbEateries.get(0);
-	
 	}
 	
 	@Test

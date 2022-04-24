@@ -43,6 +43,7 @@ class OpeningMatchTests {
 		LocalDateTime userRequestDateTime = LocalDateTime.of(2022,04,19, 21, 00, 00, 00000);
 		String customerOpeningDay = "Tuesday";
 		Boolean result = o.matchOpeningDay(userRequestDateTime, customerOpeningDay);
+		assertEquals(true, result);
 	}
 	
 	@Test

@@ -78,13 +78,13 @@ class IntegrationTests {
 	void testRecommendedEateriesHappyPath() {
 	
 	// Arrange
-	UserPreferences userPref1 = new UserPreferences(LocalDateTime.of(2022,04,22, 21, 00, 00, 00000), "Quick Bite", new ArrayList<Cuisine>(Arrays.asList(Cuisine.FASTFOOD, Cuisine.BURGER)), "ML3 0AA", 2);
+		UserPreferences userPref1 = new UserPreferences(LocalDateTime.of(2022,04,22, 21, 00, 00, 00000), "Quick Bite", new ArrayList<Cuisine>(Arrays.asList(Cuisine.FASTFOOD, Cuisine.BURGER)), "ML3 0AA", 2);
 
 	//Action
-	ArrayList<EateryInformation> result = r.recommendedEateries(dbEateries, userPref1);
+		ArrayList<EateryInformation> result = r.recommendedEateries(dbEateries, userPref1);
 	
 	//Assert
-	assertEquals(2, result.size());
+		assertEquals(2, result.size());
 	}
 
 }

@@ -2,7 +2,6 @@ package tests;
 
 import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.List;
 
 import eatery.Cuisine;
 import eatery.EateryInformation;

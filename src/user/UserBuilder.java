@@ -48,6 +48,7 @@ public class UserBuilder {
 		return this;
 	}
 	
+	// allows for varying number of properties to be included in the constructor of the user preferences class
 	public UserPreferences build () {
 		return new UserPreferences(userRequestDateTime, userPeriodSpentPreference, userCuisinePreferences, userPostCode, numberDiners);
 	}
