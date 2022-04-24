@@ -11,10 +11,9 @@ import eatery.EateryInformation;
 import user.UserPeriodPrefInMinutes;
 import user.UserPreferences;
 
-public class OpeningMatch implements UserPeriodPrefInMinutes, PreferenceMatch {
+public class OpeningMatch implements UserPeriodPrefInMinutes, Matchable {
 	
-	// Opening requirements
-	// Day parser to convert end user LocalDateTime into day int (Opening class)
+	// Day parser to convert end user LocalDateTime into day string (Opening class)
 		
 	public String requestDay(LocalDateTime userRequestDateTime) {
 		
@@ -27,7 +26,7 @@ public class OpeningMatch implements UserPeriodPrefInMinutes, PreferenceMatch {
 		return dayOfWeek;
 	}
 		
-		// Boolean to match day
+	// Boolean to match day of the user request to the opening of the eatery
 	public Boolean matchOpeningDay(LocalDateTime userRequestDateTime, String customerOpeningDay) {
 		
 		if (requestDay(userRequestDateTime) == customerOpeningDay)
@@ -36,9 +35,9 @@ public class OpeningMatch implements UserPeriodPrefInMinutes, PreferenceMatch {
 			return false;
 	}
 		
-		// Period Spent time sorted into categories to match end user preferences;
-		// Quick bite <= 45, No Preference 45-89, Leisurely >= 90
-		// Get minutes of the user preference
+	// Period Spent time sorted into categories to match end user preferences;
+	// Quick bite <= 45, No Preference 46-89 (use an average of 60 minutes), Leisurely >= 90
+	// Get minutes of the user preference to use to match to eatery closing time
 	public int userPeriodPrefInMinutes(String userPeriodSpentPreference) {
 		int periodSpentPreference = 0;
 
@@ -56,6 +55,7 @@ public class OpeningMatch implements UserPeriodPrefInMinutes, PreferenceMatch {
 		return periodSpentPreference;
 	}
 
+	// match the user request with eatery opening day, opening time and that the eatery wont close before the user has waited, been seated and served
 	@Override
 	public Boolean preferenceMatch(EateryInformation eateryInfo, UserPreferences userPreferences) {
 		

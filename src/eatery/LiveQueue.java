@@ -2,7 +2,7 @@ package eatery;
 
 public class LiveQueue {
 
-	// properties
+// properties
 private int currentWaitTime;
 
 // constructor

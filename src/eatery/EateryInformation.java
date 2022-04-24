@@ -1,7 +1,5 @@
 package eatery;
 
-
-
 public class EateryInformation {
 
 // properties

@@ -14,8 +14,7 @@ this.addressLineOne = addressLineOne;
 this.addressLineTwo = addressLineTwo;
 this.addressLineThree = addressLineThree;
 this.postcode = postcode;
-
-	}
+}
 
 public void updateAddressLineOne(String customerUpdateAddressLineOne) {
 	this.addressLineOne = customerUpdateAddressLineOne;

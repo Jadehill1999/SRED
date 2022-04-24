@@ -2,6 +2,6 @@ package preferenceMatch;
 import eatery.EateryInformation;
 import user.UserPreferences;
 
-public interface PreferenceMatch {
+public interface Matchable {
 	public Boolean preferenceMatch(EateryInformation eateryInfo, UserPreferences userPreferences);
 }

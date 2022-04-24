@@ -6,7 +6,7 @@ import eatery.Cuisine;
 import eatery.EateryInformation;
 import user.UserPreferences;
 
-public class ServiceInformationMatch implements PreferenceMatch{
+public class ServiceInformationMatch implements Matchable{
 	
 	// Service period requirements
 	// Period Spent time sorted into categories to match end user preferences;
@@ -26,6 +26,7 @@ public class ServiceInformationMatch implements PreferenceMatch{
 		return false;
 	}
 	
+	// checks if service speed category preferred by the user matches the period spent time for the given service
 	public Boolean matchServiceSpeed(int servicePeriodSpent, int currentWaitTime, String userPeriodSpent) {		
 		
 		if (userPeriodSpent.isEmpty())
@@ -38,6 +39,7 @@ public class ServiceInformationMatch implements PreferenceMatch{
 			return false;
 	}
 	
+	// iterates though the quisine preferences chosen by the user to see if any of these match the service cuisine
 	public Boolean matchCuisinePreference(Cuisine serviceCuisine, List<Cuisine> userCuisinePreference) {
 		Boolean matching = false;
 	
