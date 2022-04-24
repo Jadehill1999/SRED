@@ -49,6 +49,13 @@ class OpeningMatchTest {
 	}
 	
 	@Test
+	void matchOpeningDayTest() {
+		LocalDateTime userRequestDateTime = LocalDateTime.of(2022,04,19, 21, 00, 00, 00000);
+		String customerOpeningDay = "Tuesday";
+		Boolean result = o.matchOpeningDay(userRequestDateTime, customerOpeningDay);
+	}
+	
+	@Test
 	void userPeriodPrefInMinutesNullTest() {
 		String userPeriodPreferenceSpent = "";
 		int result = o.userPeriodPrefInMinutes(userPeriodPreferenceSpent);

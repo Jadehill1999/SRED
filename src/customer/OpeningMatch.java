@@ -25,7 +25,7 @@ public class OpeningMatch implements UserPeriodPrefInMinutes, PreferenceMatch {
 	}
 		
 		// Boolean to match day
-	private boolean matchOpeningDay(LocalDateTime userRequestDateTime, String customerOpeningDay) {
+	public Boolean matchOpeningDay(LocalDateTime userRequestDateTime, String customerOpeningDay) {
 		
 		if (requestDay(userRequestDateTime) == customerOpeningDay)
 			return true;
