@@ -12,15 +12,23 @@ import user.UserPreferences;
 
 public class EateryInformationMatch implements PreferenceMatch{
 	
+	public int eaterySpace(EateryInformation eateryInfo) {
+		
+		int eaterySpace = eateryInfo.getCapacity()-eateryInfo.getCheckedIn();
+		
+		return eaterySpace;
+	}
+	
 	@Override
 	public Boolean preferenceMatch(EateryInformation eateryInfo, UserPreferences userPreferences) {
 		
-		int eaterySpace = eateryInfo.getCapacity()-eateryInfo.getCheckedIn();
+		int eaterySpace = eaterySpace(eateryInfo);
 		int userNumberRequest = userPreferences.getNumberDiners();
 		
 		if (eaterySpace > userNumberRequest)
 			return true;
-		return false;
+		else
+			return false;
 	}	
 }
 

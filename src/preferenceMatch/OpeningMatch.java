@@ -7,6 +7,7 @@ import java.time.LocalTime;
 import java.time.format.TextStyle;
 import java.util.Locale;
 
+import eatery.EateryInformation;
 import user.UserPeriodPrefInMinutes;
 import user.UserPreferences;
 
