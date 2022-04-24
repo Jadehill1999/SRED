@@ -1,10 +1,10 @@
-package User;
+package user;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import customer.Cuisine;
+import eatery.Cuisine;
 
 public class UserBuilder {
 	

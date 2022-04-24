@@ -9,12 +9,12 @@ import java.util.Arrays;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import User.UserPreferences;
-import customer.Cuisine;
-import customer.EateryInformation;
+import eatery.Cuisine;
+import eatery.EateryInformation;
 import preferenceMatch.ServiceInformationMatch;
+import user.UserPreferences;
 
-class ServiceInformationMatchTest {
+class ServiceInformationMatchTests {
 	
 
 	private ServiceInformationMatch s = new ServiceInformationMatch();

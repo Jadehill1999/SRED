@@ -1,11 +1,12 @@
-package User;
+package user;
 
-import customer.Cuisine;
 import java.time.*;
 import java.time.format.TextStyle;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+
+import eatery.Cuisine;
 
 public class UserPreferences {
 	

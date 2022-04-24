@@ -7,8 +7,8 @@ import java.time.LocalTime;
 import java.time.format.TextStyle;
 import java.util.Locale;
 
-import User.UserPeriodPrefInMinutes;
-import User.UserPreferences;
+import user.UserPeriodPrefInMinutes;
+import user.UserPreferences;
 
 public class OpeningMatch implements UserPeriodPrefInMinutes, PreferenceMatch {
 	

@@ -2,9 +2,9 @@ package preferenceMatch;
 
 import java.util.List;
 
-import User.UserPreferences;
-import customer.Cuisine;
-import customer.EateryInformation;
+import eatery.Cuisine;
+import eatery.EateryInformation;
+import user.UserPreferences;
 
 public class ServiceInformationMatch implements PreferenceMatch{
 	

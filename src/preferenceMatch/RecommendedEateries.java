@@ -2,8 +2,8 @@ package preferenceMatch;
 
 import java.util.ArrayList;
 
-import User.UserPreferences;
-import customer.EateryInformation;
+import eatery.EateryInformation;
+import user.UserPreferences;
 
 public class RecommendedEateries {
 	

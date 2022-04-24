@@ -6,13 +6,14 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import User.UserPreferences;
-import customer.Cuisine;
-import customer.EateryInformation;
 import preferenceMatch.RecommendedEateries;
+import user.UserPreferences;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import eatery.Cuisine;
+import eatery.EateryInformation;
 
 class IntegrationTests {
 	

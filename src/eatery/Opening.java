@@ -1,8 +1,8 @@
-package customer;
+package eatery;
 
 import java.time.*;
 
-import User.UserPreferences;
+import user.UserPreferences;
 
 public class Opening {
 

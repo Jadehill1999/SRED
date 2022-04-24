@@ -10,12 +10,12 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import User.UserPreferences;
-import customer.Cuisine;
-import customer.EateryInformation;
+import eatery.Cuisine;
+import eatery.EateryInformation;
 import preferenceMatch.OpeningMatch;
+import user.UserPreferences;
 
-class OpeningMatchTest {
+class OpeningMatchTests {
 	
 	private OpeningMatch o = new OpeningMatch();
 	private EateryInformation eatery1;
